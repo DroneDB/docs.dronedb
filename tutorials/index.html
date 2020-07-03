@@ -1,0 +1,283 @@
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorials &mdash; DroneDB 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://docs.dronedb.app/tutorials/index.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="License" href="../copyright.html" />
+    <link rel="prev" title="thumbs" href="../commands/thumbs.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> DroneDB
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/index.html">Commands</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#indexing-files">Indexing Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#projecting-an-image-onto-a-map">Projecting an image onto a map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#browsing-data-with-qgis">Browsing data with QGIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-flight-path-linestring">Viewing Flight Path LineString</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../copyright.html">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DroneDB</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Tutorials</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/tutorials/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../copyright.html" class="btn btn-neutral float-right" title="License" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../commands/thumbs.html" class="btn btn-neutral float-left" title="thumbs" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorials">
+<span id="id1"></span><h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="indexing-files">
+<h2>Indexing Files<a class="headerlink" href="#indexing-files" title="Permalink to this headline">¶</a></h2>
+<p>To create a new index:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>To add images to an index:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">add</span> <span class="n">images</span><span class="o">/</span>
+<span class="n">ddb</span> <span class="n">add</span> <span class="n">images</span><span class="o">/</span><span class="n">DJI_0018</span><span class="o">.</span><span class="n">JPG</span>
+<span class="n">ddb</span> <span class="n">add</span> <span class="n">images</span><span class="o">/*.</span><span class="n">JPG</span>
+</pre></div>
+</div>
+<p>To remove images from an index:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">rm</span> <span class="n">images</span><span class="o">/</span><span class="n">DJI_0018</span><span class="o">.</span><span class="n">JPG</span>
+</pre></div>
+</div>
+<p>To sync an index after filesystem changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">sync</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="projecting-an-image-onto-a-map">
+<h2>Projecting an image onto a map<a class="headerlink" href="#projecting-an-image-onto-a-map" title="Permalink to this headline">¶</a></h2>
+<img alt="https://user-images.githubusercontent.com/1951843/68077866-001de800-fda2-11e9-895f-b5840d9d047d.png" src="https://user-images.githubusercontent.com/1951843/68077866-001de800-fda2-11e9-895f-b5840d9d047d.png" />
+<p>Once you’ve built an index, you can project images onto a map:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">geoproj</span> <span class="n">images</span><span class="o">/</span><span class="n">DJI_0018</span><span class="o">.</span><span class="n">JPG</span> <span class="o">-</span><span class="n">o</span> <span class="n">projected</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="browsing-data-with-qgis">
+<h2>Browsing data with QGIS<a class="headerlink" href="#browsing-data-with-qgis" title="Permalink to this headline">¶</a></h2>
+<p>You can explore the indexed data with a program such as QGIS. The index creates a <cite>.ddb/dbase.sqlite</cite> file when running the <cite>ddb init</cite> command. This is a SpatiaLite database and can be imported by adding a new SpatiaLite layer.</p>
+</div>
+<div class="section" id="viewing-flight-path-linestring">
+<h2>Viewing Flight Path LineString<a class="headerlink" href="#viewing-flight-path-linestring" title="Permalink to this headline">¶</a></h2>
+<img alt="https://user-images.githubusercontent.com/1951843/66138811-3dd5f800-e5cd-11e9-816d-a0efa39ccca5.png" src="https://user-images.githubusercontent.com/1951843/66138811-3dd5f800-e5cd-11e9-816d-a0efa39ccca5.png" />
+<p>Create a new query similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">AsGeoJSON</span><span class="p">(</span><span class="n">MakeLine</span><span class="p">(</span><span class="n">point_geom</span><span class="p">))</span> <span class="n">FROM</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">point_geom</span><span class="p">,</span> <span class="n">json_extract</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;$.captureTime&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">captureTime</span> <span class="n">FROM</span> <span class="n">entries</span> <span class="n">ORDER</span> <span class="n">by</span> <span class="n">captureTime</span> <span class="n">ASC</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The ‘point_geom’ column contains the GPS locations, while ‘polygon_geom’ has the footprint extents. Footprint extents can be calculated only if gimbal orientation and camera parameters are present.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../copyright.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../commands/thumbs.html" class="btn btn-neutral float-left" title="thumbs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../copyright.html">Copyright</a> 2020, DroneDB authors
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+    <div class="footer">
+        <div class="container">
+                    &copy;  2020, DroneDB authors
+                        <a href="http://github.com/uav4geo/DroneDB/graphs/contributors">DroneDB Authors</a>,
+        </div>
+    </div>
+
+</body>
+</html>
