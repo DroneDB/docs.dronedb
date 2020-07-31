@@ -95,7 +95,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#indexing-files">Indexing Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#projecting-an-image-onto-a-map">Projecting an image onto a map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#browsing-data-with-qgis">Browsing data with QGIS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#viewing-flight-path-linestring">Viewing Flight Path LineString</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="#viewing-flight-path-linestring">Viewing Flight Path LineString</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extracting-gps-locations-footprints-to-geojson">Extracting GPS locations/footprints to GeoJSON</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -220,6 +221,17 @@
 </pre></div>
 </div>
 <p>The ‘point_geom’ column contains the GPS locations, while ‘polygon_geom’ has the footprint extents. Footprint extents can be calculated only if gimbal orientation and camera parameters are present.</p>
+</div>
+<div class="section" id="extracting-gps-locations-footprints-to-geojson">
+<h2>Extracting GPS locations/footprints to GeoJSON<a class="headerlink" href="#extracting-gps-locations-footprints-to-geojson" title="Permalink to this headline">¶</a></h2>
+<p>You can quickly extract the locations of images to GeoJSON via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">info</span> <span class="o">*.</span><span class="n">JPG</span> <span class="o">-</span><span class="n">f</span> <span class="n">geojson</span> <span class="o">-</span><span class="n">o</span> <span class="n">gps</span><span class="o">.</span><span class="n">geojson</span>
+</pre></div>
+</div>
+<p>Or for image footprints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">info</span> <span class="o">*.</span><span class="n">JPG</span> <span class="o">-</span><span class="n">f</span> <span class="n">geojson</span> <span class="o">--</span><span class="n">geometry</span> <span class="n">polygon</span> <span class="o">-</span><span class="n">o</span> <span class="n">footprint</span><span class="o">.</span><span class="n">geojson</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
