@@ -92,11 +92,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Commands</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="add.html">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">build</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geoproj.html">geoproj</a></li>
 <li class="toctree-l2"><a class="reference internal" href="info.html">info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="init.html">init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="login.html">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logout.html">logout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="password.html">password</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remove.html">remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set.html">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setexif.html">setexif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="share.html">share</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status.html">status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sync.html">sync</a></li>
 <li class="toctree-l2"><a class="reference internal" href="system.html">system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thumbs.html">thumbs</a></li>
@@ -189,17 +197,26 @@
 <span class="n">geoproj</span> <span class="o">-</span> <span class="n">Project</span> <span class="n">images</span> <span class="n">to</span> <span class="n">georeferenced</span> <span class="n">rasters</span>
 <span class="n">info</span> <span class="o">-</span> <span class="n">Retrieve</span> <span class="n">information</span> <span class="n">about</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span>
 <span class="n">init</span> <span class="o">-</span> <span class="n">Initialize</span> <span class="n">an</span> <span class="n">index</span><span class="o">.</span> <span class="n">If</span> <span class="n">a</span> <span class="n">directory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">specified</span><span class="p">,</span> <span class="n">initializes</span> <span class="n">the</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">directory</span>
+<span class="nb">list</span> <span class="o">-</span> <span class="n">List</span> <span class="n">indexed</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span>
+<span class="n">login</span> <span class="o">-</span> <span class="n">Authenticate</span> <span class="k">with</span> <span class="n">a</span> <span class="n">registry</span><span class="o">.</span>
+<span class="n">logout</span> <span class="o">-</span> <span class="n">Logout</span> <span class="kn">from</span> <span class="nn">all</span> <span class="n">registries</span><span class="o">.</span> <span class="n">To</span> <span class="n">logout</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">single</span> <span class="n">registry</span><span class="p">,</span> <span class="n">use</span> <span class="n">the</span> <span class="o">--</span><span class="n">server</span> <span class="n">option</span><span class="o">.</span>
+<span class="n">password</span> <span class="o">-</span> <span class="n">Manage</span> <span class="n">database</span> <span class="n">passwords</span>
 <span class="n">remove</span> <span class="o">-</span> <span class="n">Remove</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">index</span><span class="o">.</span> <span class="n">The</span> <span class="n">filesystem</span> <span class="ow">is</span> <span class="n">left</span> <span class="n">unchanged</span> <span class="p">(</span><span class="n">actual</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">removed</span><span class="p">)</span>
-<span class="nb">set</span> <span class="o">-</span> <span class="n">Modify</span> <span class="n">EXIF</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">files</span><span class="o">.</span>
+<span class="n">setexif</span> <span class="o">-</span> <span class="n">Modify</span> <span class="n">EXIF</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">files</span><span class="o">.</span>
+<span class="n">share</span> <span class="o">-</span> <span class="n">Share</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">folders</span> <span class="n">to</span> <span class="n">a</span> <span class="n">registry</span>
+<span class="n">status</span> <span class="o">-</span> <span class="n">Show</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span> <span class="n">index</span> <span class="n">status</span> <span class="n">compared</span> <span class="n">to</span> <span class="n">the</span> <span class="n">filesystem</span>
 <span class="n">sync</span> <span class="o">-</span> <span class="n">Sync</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">index</span> <span class="k">with</span> <span class="n">changes</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">filesystem</span>
+<span class="n">system</span> <span class="o">-</span> <span class="n">Manage</span> <span class="n">ddb</span>
 <span class="n">thumbs</span> <span class="o">-</span> <span class="n">Generate</span> <span class="n">thumbnails</span> <span class="k">for</span> <span class="n">images</span> <span class="ow">and</span> <span class="n">rasters</span>
 <span class="n">tile</span> <span class="o">-</span> <span class="n">Generate</span> <span class="n">tiles</span> <span class="k">for</span> <span class="n">GeoTIFFs</span>
-<span class="n">system</span> <span class="o">-</span> <span class="n">Manage</span> <span class="n">ddb</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="add.html">add</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build.html">build</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="geoproj.html">geoproj</a><ul class="simple">
@@ -211,10 +228,31 @@
 <li class="toctree-l1"><a class="reference internal" href="init.html">init</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="list.html">list</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="login.html">login</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logout.html">logout</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="password.html">password</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="remove.html">remove</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="set.html">set</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setexif.html">setexif</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="share.html">share</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="status.html">status</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sync.html">sync</a><ul class="simple">

@@ -42,7 +42,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="next" title="info" href="info.html" />
-    <link rel="prev" title="add" href="add.html" /> 
+    <link rel="prev" title="build" href="build.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,13 +92,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Commands</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="add.html">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">build</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">geoproj</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="info.html">info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="init.html">init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="login.html">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logout.html">logout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="password.html">password</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remove.html">remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set.html">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setexif.html">setexif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="share.html">share</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status.html">status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sync.html">sync</a></li>
 <li class="toctree-l2"><a class="reference internal" href="system.html">system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thumbs.html">thumbs</a></li>
@@ -176,7 +184,7 @@
         <a href="info.html" class="btn btn-neutral float-right" title="info" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="add.html" class="btn btn-neutral float-left" title="add" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="build.html" class="btn btn-neutral float-left" title="build" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -187,13 +195,16 @@
             
   <div class="section" id="geoproj">
 <span id="geoproj-command"></span><h1>geoproj<a class="headerlink" href="#geoproj" title="Permalink to this headline">¶</a></h1>
-<p>Project images to georeferenced rasters</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ddb geoproj output/ *.JPG [args]
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">arg</span>  <span class="n">Output</span> <span class="n">path</span> <span class="p">(</span><span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">)</span>
-<span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">images</span> <span class="n">arg</span>  <span class="n">Images</span> <span class="n">to</span> <span class="n">project</span>
-<span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">size</span> <span class="n">arg</span>    <span class="n">Output</span> <span class="n">image</span> <span class="n">size</span> <span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="o">%</span><span class="p">]</span><span class="o">|</span><span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Project</span> <span class="n">images</span> <span class="n">to</span> <span class="n">georeferenced</span> <span class="n">rasters</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">ddb</span> <span class="n">geoproj</span> <span class="n">output</span><span class="o">/</span> <span class="o">*.</span><span class="n">JPG</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
+
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">arg</span>  <span class="n">Output</span> <span class="n">path</span> <span class="p">(</span><span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">images</span> <span class="n">arg</span>  <span class="n">Images</span> <span class="n">to</span> <span class="n">project</span>
+  <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">size</span> <span class="n">arg</span>    <span class="n">Output</span> <span class="n">image</span> <span class="n">size</span> <span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="o">%</span><span class="p">]</span><span class="o">|</span><span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>        <span class="n">Print</span> <span class="n">help</span>
+      <span class="o">--</span><span class="n">debug</span>       <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -211,7 +222,7 @@
         <a href="info.html" class="btn btn-neutral float-right" title="info" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="add.html" class="btn btn-neutral float-left" title="add" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="build.html" class="btn btn-neutral float-left" title="build" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -42,7 +42,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="next" title="set" href="set.html" />
-    <link rel="prev" title="init" href="init.html" /> 
+    <link rel="prev" title="password" href="password.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,13 +92,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Commands</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="add.html">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">build</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geoproj.html">geoproj</a></li>
 <li class="toctree-l2"><a class="reference internal" href="info.html">info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="init.html">init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="login.html">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logout.html">logout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="password.html">password</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">remove</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="set.html">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setexif.html">setexif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="share.html">share</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status.html">status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sync.html">sync</a></li>
 <li class="toctree-l2"><a class="reference internal" href="system.html">system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thumbs.html">thumbs</a></li>
@@ -176,7 +184,7 @@
         <a href="set.html" class="btn btn-neutral float-right" title="set" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="init.html" class="btn btn-neutral float-left" title="init" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="password.html" class="btn btn-neutral float-left" title="password" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -187,13 +195,15 @@
             
   <div class="section" id="remove">
 <span id="remove-command"></span><h1>remove<a class="headerlink" href="#remove" title="Permalink to this headline">¶</a></h1>
-<p>Remove files and directories from an index. The filesystem is left unchanged (actual files and directories will not be removed)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ddb rm image1.JPG image2.JPG [...] [args] [PATHS]
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="o">--</span><span class="n">directory</span> <span class="n">arg</span>  <span class="n">Working</span> <span class="n">directory</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="o">.</span><span class="p">)</span>
-<span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="o">--</span><span class="n">recursive</span>      <span class="n">Recursively</span> <span class="n">remove</span> <span class="n">subdirectories</span> <span class="ow">and</span> <span class="n">files</span>
-<span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">--</span><span class="n">paths</span> <span class="n">arg</span>      <span class="n">Paths</span> <span class="n">to</span> <span class="n">remove</span> <span class="kn">from</span> <span class="nn">index</span> <span class="p">(</span><span class="n">files</span> <span class="ow">or</span> <span class="n">directories</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Remove</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span> <span class="kn">from</span> <span class="nn">an</span> <span class="n">index</span><span class="o">.</span> <span class="n">The</span> <span class="n">filesystem</span> <span class="ow">is</span> <span class="n">left</span> <span class="n">unchanged</span> <span class="p">(</span><span class="n">actual</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">removed</span><span class="p">)</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">ddb</span> <span class="n">rm</span> <span class="n">image1</span><span class="o">.</span><span class="n">JPG</span> <span class="n">image2</span><span class="o">.</span><span class="n">JPG</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="p">[</span><span class="n">PATHS</span><span class="p">]</span>
+
+  <span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="o">--</span><span class="n">working</span><span class="o">-</span><span class="nb">dir</span> <span class="n">arg</span>  <span class="n">Working</span> <span class="n">directory</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="o">.</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">--</span><span class="n">paths</span> <span class="n">arg</span>        <span class="n">Paths</span> <span class="n">to</span> <span class="n">remove</span> <span class="kn">from</span> <span class="nn">index</span> <span class="p">(</span><span class="n">files</span> <span class="ow">or</span> <span class="n">directories</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>             <span class="n">Print</span> <span class="n">help</span>
+      <span class="o">--</span><span class="n">debug</span>            <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -211,7 +221,7 @@
         <a href="set.html" class="btn btn-neutral float-right" title="set" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="init.html" class="btn btn-neutral float-left" title="init" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="password.html" class="btn btn-neutral float-left" title="password" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

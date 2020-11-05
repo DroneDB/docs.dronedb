@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>add &mdash; DroneDB 1.0.0 documentation</title>
+  <title>build &mdash; DroneDB 1.0.0 documentation</title>
   
 
   
@@ -19,7 +19,7 @@
   
   
   
-    <link rel="canonical" href="https://docs.dronedb.app/commands/add.html"/>
+    <link rel="canonical" href="https://docs.dronedb.app/commands/build.html"/>
   
 
   
@@ -41,8 +41,8 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="build" href="build.html" />
-    <link rel="prev" title="Commands" href="index.html" /> 
+    <link rel="next" title="geoproj" href="geoproj.html" />
+    <link rel="prev" title="add" href="add.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,10 +91,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Commands</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">add</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="add.html">add</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">build</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="build.html">build</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geoproj.html">geoproj</a></li>
 <li class="toctree-l2"><a class="reference internal" href="info.html">info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="init.html">init</a></li>
@@ -163,14 +163,14 @@
         
           <li><a href="index.html">Commands</a> &raquo;</li>
         
-      <li>add</li>
+      <li>build</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/add.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/build.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -181,10 +181,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="build.html" class="btn btn-neutral float-right" title="build" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geoproj.html" class="btn btn-neutral float-right" title="geoproj" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Commands" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="add.html" class="btn btn-neutral float-left" title="add" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -193,18 +193,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="add">
-<span id="add-command"></span><h1>add<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span> <span class="n">to</span> <span class="n">an</span> <span class="n">index</span><span class="o">.</span>
+  <div class="section" id="build">
+<span id="build-command"></span><h1>build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Initialize</span> <span class="ow">and</span> <span class="n">build</span> <span class="n">an</span> <span class="n">index</span><span class="o">.</span> <span class="n">Shorthand</span> <span class="k">for</span> <span class="n">running</span> <span class="n">an</span> <span class="n">init</span><span class="p">,</span><span class="n">add</span><span class="p">,</span><span class="n">commit</span> <span class="n">command</span> <span class="n">sequence</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
-  <span class="n">ddb</span> <span class="n">add</span> <span class="o">*.</span><span class="n">JPG</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="p">[</span><span class="n">PATHS</span><span class="p">]</span>
+  <span class="n">ddb</span> <span class="n">build</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="p">[</span><span class="n">PATHS</span><span class="p">]</span>
 
-  <span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="o">--</span><span class="n">working</span><span class="o">-</span><span class="nb">dir</span> <span class="n">arg</span>  <span class="n">Working</span> <span class="n">directory</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="o">.</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="o">--</span><span class="n">recursive</span>        <span class="n">Recursively</span> <span class="n">add</span> <span class="n">subdirectories</span> <span class="ow">and</span> <span class="n">files</span>
-  <span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">--</span><span class="n">paths</span> <span class="n">arg</span>        <span class="n">Paths</span> <span class="n">to</span> <span class="n">add</span> <span class="n">to</span> <span class="n">index</span> <span class="p">(</span><span class="n">files</span> <span class="ow">or</span> <span class="n">directories</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>             <span class="n">Print</span> <span class="n">help</span>
-      <span class="o">--</span><span class="n">debug</span>            <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
+      <span class="o">--</span><span class="n">paths</span> <span class="n">arg</span>  <span class="n">Paths</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>       <span class="n">Print</span> <span class="n">help</span>
+      <span class="o">--</span><span class="n">debug</span>      <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -219,10 +217,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="build.html" class="btn btn-neutral float-right" title="build" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geoproj.html" class="btn btn-neutral float-right" title="geoproj" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="add.html" class="btn btn-neutral float-left" title="add" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

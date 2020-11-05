@@ -42,7 +42,7 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="next" title="system" href="system.html" />
-    <link rel="prev" title="set" href="set.html" /> 
+    <link rel="prev" title="status" href="status.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,11 +92,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Commands</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="add.html">add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">build</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geoproj.html">geoproj</a></li>
 <li class="toctree-l2"><a class="reference internal" href="info.html">info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="init.html">init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="login.html">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logout.html">logout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="password.html">password</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remove.html">remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set.html">set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setexif.html">setexif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="share.html">share</a></li>
+<li class="toctree-l2"><a class="reference internal" href="status.html">status</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">sync</a><ul class="simple">
 </ul>
 </li>
@@ -176,7 +184,7 @@
         <a href="system.html" class="btn btn-neutral float-right" title="system" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="set.html" class="btn btn-neutral float-left" title="set" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="status.html" class="btn btn-neutral float-left" title="status" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -187,11 +195,14 @@
             
   <div class="section" id="sync">
 <span id="sync-command"></span><h1>sync<a class="headerlink" href="#sync" title="Permalink to this headline">¶</a></h1>
-<p>Sync files and directories in the index with changes from the filesystem</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ddb sync
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="o">--</span><span class="n">directory</span> <span class="n">arg</span>  <span class="n">Working</span> <span class="n">directory</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="o">.</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sync</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">index</span> <span class="k">with</span> <span class="n">changes</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">filesystem</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">ddb</span> <span class="n">sync</span>
+
+  <span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="o">--</span><span class="n">working</span><span class="o">-</span><span class="nb">dir</span> <span class="n">arg</span>  <span class="n">Working</span> <span class="n">directory</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="o">.</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>             <span class="n">Print</span> <span class="n">help</span>
+      <span class="o">--</span><span class="n">debug</span>            <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -209,7 +220,7 @@
         <a href="system.html" class="btn btn-neutral float-right" title="system" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="set.html" class="btn btn-neutral float-left" title="set" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="status.html" class="btn btn-neutral float-left" title="status" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

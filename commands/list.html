@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>add &mdash; DroneDB 1.0.0 documentation</title>
+  <title>list &mdash; DroneDB 1.0.0 documentation</title>
   
 
   
@@ -19,7 +19,7 @@
   
   
   
-    <link rel="canonical" href="https://docs.dronedb.app/commands/add.html"/>
+    <link rel="canonical" href="https://docs.dronedb.app/commands/list.html"/>
   
 
   
@@ -41,8 +41,8 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="build" href="build.html" />
-    <link rel="prev" title="Commands" href="index.html" /> 
+    <link rel="next" title="login" href="login.html" />
+    <link rel="prev" title="init" href="init.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,14 +91,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Commands</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">add</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="add.html">add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build.html">build</a></li>
 <li class="toctree-l2"><a class="reference internal" href="geoproj.html">geoproj</a></li>
 <li class="toctree-l2"><a class="reference internal" href="info.html">info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="init.html">init</a></li>
-<li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">list</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="login.html">login</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logout.html">logout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="password.html">password</a></li>
@@ -163,14 +163,14 @@
         
           <li><a href="index.html">Commands</a> &raquo;</li>
         
-      <li>add</li>
+      <li>list</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/add.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/list.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -181,10 +181,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="build.html" class="btn btn-neutral float-right" title="build" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="login.html" class="btn btn-neutral float-right" title="login" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Commands" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="init.html" class="btn btn-neutral float-left" title="init" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -193,16 +193,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="add">
-<span id="add-command"></span><h1>add<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Add</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span> <span class="n">to</span> <span class="n">an</span> <span class="n">index</span><span class="o">.</span>
+  <div class="section" id="list">
+<span id="list-command"></span><h1>list<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">List</span> <span class="n">indexed</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span>
 
 <span class="n">Usage</span><span class="p">:</span>
-  <span class="n">ddb</span> <span class="n">add</span> <span class="o">*.</span><span class="n">JPG</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="p">[</span><span class="n">PATHS</span><span class="p">]</span>
+  <span class="n">ddb</span> <span class="nb">list</span> <span class="o">*.</span><span class="n">JPG</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
 
+  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="nb">input</span> <span class="n">arg</span>        <span class="n">File</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="nb">list</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">arg</span>       <span class="n">Output</span> <span class="n">file</span> <span class="n">to</span> <span class="n">write</span> <span class="n">results</span> <span class="n">to</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">stdout</span><span class="p">)</span>
   <span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="o">--</span><span class="n">working</span><span class="o">-</span><span class="nb">dir</span> <span class="n">arg</span>  <span class="n">Working</span> <span class="n">directory</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="o">.</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="o">--</span><span class="n">recursive</span>        <span class="n">Recursively</span> <span class="n">add</span> <span class="n">subdirectories</span> <span class="ow">and</span> <span class="n">files</span>
-  <span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="o">--</span><span class="n">paths</span> <span class="n">arg</span>        <span class="n">Paths</span> <span class="n">to</span> <span class="n">add</span> <span class="n">to</span> <span class="n">index</span> <span class="p">(</span><span class="n">files</span> <span class="ow">or</span> <span class="n">directories</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="o">--</span><span class="n">recursive</span>        <span class="n">Recursively</span> <span class="n">search</span> <span class="ow">in</span> <span class="n">subdirectories</span>
+  <span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="o">--</span><span class="n">depth</span> <span class="n">arg</span>        <span class="n">Max</span> <span class="n">recursion</span> <span class="n">depth</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="nb">format</span> <span class="n">arg</span>       <span class="n">Output</span> <span class="nb">format</span> <span class="p">(</span><span class="n">text</span><span class="o">|</span><span class="n">json</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">text</span><span class="p">)</span>
   <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>             <span class="n">Print</span> <span class="n">help</span>
       <span class="o">--</span><span class="n">debug</span>            <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
 </pre></div>
@@ -219,10 +222,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="build.html" class="btn btn-neutral float-right" title="build" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="login.html" class="btn btn-neutral float-right" title="login" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="init.html" class="btn btn-neutral float-left" title="init" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
