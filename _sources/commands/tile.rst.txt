@@ -6,10 +6,10 @@ tile
 
 ::
 
-    Generate tiles for GeoTIFFs
+    Generate tiles for GeoTIFFs and GeoImages
     
     Usage:
-      ddb tile geo.tif [output directory] [args]
+      ddb tile [geo.tif | image.jpg] [output directory] [args]
     
       -i, --input arg   File to tile
       -o, --output arg  Output directory where to store tiles (default:

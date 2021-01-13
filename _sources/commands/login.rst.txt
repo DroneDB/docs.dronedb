@@ -12,7 +12,7 @@ login
       ddb login [args]
     
           --server arg    Registry server to authenticate to (default:
-                          index.dronedb.app)
+                          testhub.dronedb.app)
       -u, --username arg  Username
       -p, --password arg  Password
       -h, --help          Print help

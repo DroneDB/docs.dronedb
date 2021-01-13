@@ -17,6 +17,8 @@
 
   
   
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
   
   
     <link rel="canonical" href="https://docs.dronedb.app/commands/thumbs.html"/>
@@ -199,10 +201,10 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">thumbnails</span> <span class="k">for</span> <span class="n">images</span> <span class="ow">and</span> <span class="n">rasters</span>
 
 <span class="n">Usage</span><span class="p">:</span>
-  <span class="n">ddb</span> <span class="n">thumbs</span> <span class="n">output</span><span class="o">/</span> <span class="o">*.</span><span class="n">JPG</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
+  <span class="n">ddb</span> <span class="n">thumbs</span> <span class="p">[</span><span class="n">image</span><span class="o">.</span><span class="n">tif</span> <span class="o">|</span> <span class="o">*.</span><span class="n">JPG</span><span class="p">]</span> <span class="o">-</span><span class="n">o</span> <span class="p">[</span><span class="n">thumb</span><span class="o">.</span><span class="n">jpg</span> <span class="o">|</span> <span class="n">output</span><span class="o">/</span><span class="p">]</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
 
-  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="nb">input</span> <span class="n">arg</span>   <span class="n">Files</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">thumbnails</span> <span class="n">of</span>
-  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">arg</span>  <span class="n">Output</span> <span class="n">directory</span> <span class="n">where</span> <span class="n">to</span> <span class="n">store</span> <span class="n">thumbnails</span>
+  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="nb">input</span> <span class="n">arg</span>   <span class="n">File</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="n">process</span>
+  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">arg</span>  <span class="n">Output</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span> <span class="n">where</span> <span class="n">to</span> <span class="n">store</span> <span class="n">thumbnail</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
   <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">size</span> <span class="n">arg</span>    <span class="n">Size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">largest</span> <span class="n">side</span> <span class="n">of</span> <span class="n">the</span> <span class="n">images</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">512</span><span class="p">)</span>
       <span class="o">--</span><span class="n">use</span><span class="o">-</span><span class="n">crc</span>     <span class="n">Use</span> <span class="n">CRC</span> <span class="k">for</span> <span class="n">output</span> <span class="n">filenames</span>
   <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>        <span class="n">Print</span> <span class="n">help</span>

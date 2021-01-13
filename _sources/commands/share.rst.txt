@@ -14,8 +14,7 @@ share
       -i, --input arg     Files and directories to share
       -r, --recursive     Recursively share subdirectories
       -t, --tag arg       Tag to use (organization/dataset or
-                          server[:port]/organization/dataset) (default:
-                          hub.dronedb.app/<username>/<uuid>)
+                          server[:port]/organization/dataset) (default: testhub.dronedb.app//)
       -p, --password arg  Optional password to protect dataset (default: )
       -s, --server arg    Registry server to share dataset with (alias of: -t
                           <server>//)

@@ -9,10 +9,10 @@ thumbs
     Generate thumbnails for images and rasters
     
     Usage:
-      ddb thumbs output/ *.JPG [args]
+      ddb thumbs [image.tif | *.JPG] -o [thumb.jpg | output/] [args]
     
-      -i, --input arg   Files to generate thumbnails of
-      -o, --output arg  Output directory where to store thumbnails
+      -i, --input arg   File(s) to process
+      -o, --output arg  Output file or directory where to store thumbnail(s)
       -s, --size arg    Size of the largest side of the images (default: 512)
           --use-crc     Use CRC for output filenames
       -h, --help        Print help
