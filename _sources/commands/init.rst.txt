@@ -12,6 +12,8 @@ init
       ddb init [args] [DIRECTORY]
     
       -w, --working-dir arg  Working directory (default: .)
+          --from-scratch     Create the index database from scratch instead of
+                             using a prebuilt one (slower)
       -h, --help             Print help
           --debug            Show debug output
 
