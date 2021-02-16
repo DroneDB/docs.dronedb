@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>info &mdash; DroneDB 1.0.0 documentation</title>
+  <title>delta &mdash; DroneDB 1.0.0 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
   
-    <link rel="canonical" href="https://docs.dronedb.app/commands/info.html"/>
+    <link rel="canonical" href="https://docs.dronedb.app/commands/delta.html"/>
   
 
   
@@ -43,8 +43,8 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="init" href="init.html" />
-    <link rel="prev" title="geoproj" href="geoproj.html" /> 
+    <link rel="next" title="geoproj" href="geoproj.html" />
+    <link rel="prev" title="chattr" href="chattr.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,11 +96,11 @@
 <li class="toctree-l2"><a class="reference internal" href="add.html">add</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build.html">build</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chattr.html">chattr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="delta.html">delta</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geoproj.html">geoproj</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">info</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">delta</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="geoproj.html">geoproj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="info.html">info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="init.html">init</a></li>
 <li class="toctree-l2"><a class="reference internal" href="list.html">list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="login.html">login</a></li>
@@ -167,14 +167,14 @@
         
           <li><a href="index.html">Commands</a> &raquo;</li>
         
-      <li>info</li>
+      <li>delta</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/info.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/delta.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -185,10 +185,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="init.html" class="btn btn-neutral float-right" title="init" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geoproj.html" class="btn btn-neutral float-right" title="geoproj" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="geoproj.html" class="btn btn-neutral float-left" title="geoproj" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="chattr.html" class="btn btn-neutral float-left" title="chattr" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -197,23 +197,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="info">
-<span id="info-command"></span><h1>info<a class="headerlink" href="#info" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Retrieve</span> <span class="n">information</span> <span class="n">about</span> <span class="n">files</span> <span class="ow">and</span> <span class="n">directories</span>
+  <div class="section" id="delta">
+<span id="delta-command"></span><h1>delta<a class="headerlink" href="#delta" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">delta</span> <span class="n">between</span> <span class="n">two</span> <span class="n">ddb</span> <span class="n">databases</span>
+
+<span class="n">Outputs</span> <span class="n">the</span> <span class="n">delta</span> <span class="n">that</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">target</span> <span class="n">turns</span> <span class="n">it</span> <span class="n">into</span> <span class="n">source</span>
 
 <span class="n">Usage</span><span class="p">:</span>
-  <span class="n">ddb</span> <span class="n">info</span> <span class="o">*.</span><span class="n">JPG</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
+  <span class="n">ddb</span> <span class="n">delta</span> <span class="n">source</span> <span class="n">target</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
 
-  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="nb">input</span> <span class="n">arg</span>     <span class="n">File</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="n">examine</span>
-  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">arg</span>    <span class="n">Output</span> <span class="n">file</span> <span class="n">to</span> <span class="n">write</span> <span class="n">results</span> <span class="n">to</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">stdout</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="nb">format</span> <span class="n">arg</span>    <span class="n">Output</span> <span class="nb">format</span> <span class="p">(</span><span class="n">text</span><span class="o">|</span><span class="n">json</span><span class="o">|</span><span class="n">geojson</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">text</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="o">--</span><span class="n">recursive</span>     <span class="n">Recursively</span> <span class="n">search</span> <span class="ow">in</span> <span class="n">subdirectories</span>
-  <span class="o">-</span><span class="n">d</span><span class="p">,</span> <span class="o">--</span><span class="n">depth</span> <span class="n">arg</span>     <span class="n">Max</span> <span class="n">recursion</span> <span class="n">depth</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-      <span class="o">--</span><span class="n">geometry</span> <span class="n">arg</span>  <span class="n">Geometry</span> <span class="n">to</span> <span class="n">output</span> <span class="p">(</span><span class="k">for</span> <span class="n">geojson</span> <span class="nb">format</span> <span class="n">only</span><span class="p">)</span>
-                      <span class="p">(</span><span class="n">auto</span><span class="o">|</span><span class="n">point</span><span class="o">|</span><span class="n">polygon</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">auto</span><span class="p">)</span>
-      <span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="nb">hash</span>     <span class="n">Compute</span> <span class="n">SHA256</span> <span class="n">hashes</span>
-  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>          <span class="n">Print</span> <span class="n">help</span>
-      <span class="o">--</span><span class="n">debug</span>         <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
+  <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">source</span> <span class="n">arg</span>  <span class="n">Source</span> <span class="n">ddb</span>
+  <span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="o">--</span><span class="n">target</span> <span class="n">arg</span>  <span class="n">Target</span> <span class="n">ddb</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="o">.</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="nb">format</span> <span class="n">arg</span>  <span class="n">Output</span> <span class="nb">format</span> <span class="p">(</span><span class="n">text</span><span class="o">|</span><span class="n">json</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">text</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>        <span class="n">Print</span> <span class="n">help</span>
+      <span class="o">--</span><span class="n">debug</span>       <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -228,10 +225,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="init.html" class="btn btn-neutral float-right" title="init" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geoproj.html" class="btn btn-neutral float-right" title="geoproj" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="geoproj.html" class="btn btn-neutral float-left" title="geoproj" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="chattr.html" class="btn btn-neutral float-left" title="chattr" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

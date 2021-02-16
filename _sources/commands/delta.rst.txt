@@ -1,0 +1,24 @@
+.. _delta_command:
+
+********************************************************************************
+delta
+********************************************************************************
+
+::
+
+    Generate delta between two ddb databases
+    
+    Outputs the delta that applied to target turns it into source
+    
+    Usage:
+      ddb delta source target [args]
+    
+      -s, --source arg  Source ddb
+      -t, --target arg  Target ddb (default: .)
+      -f, --format arg  Output format (text|json) (default: text)
+      -h, --help        Print help
+          --debug       Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
