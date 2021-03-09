@@ -1,0 +1,23 @@
+.. _clone_command:
+
+********************************************************************************
+clone
+********************************************************************************
+
+::
+
+    Clone a repository into a new directory
+    
+    Clones a repository into a newly created directory.
+    
+    Usage:
+      ddb clone (tag|url) folder [args]
+    
+      -t, --target arg  Repository tag or full url
+      -f, --folder arg  Target folder (default: )
+      -h, --help        Print help
+          --debug       Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
