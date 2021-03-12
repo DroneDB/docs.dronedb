@@ -1,0 +1,20 @@
+.. _tag_command:
+
+********************************************************************************
+tag
+********************************************************************************
+
+::
+
+    Gets or sets the dataset tag.
+    
+    Usage:
+      ddb tag [tag] [args]
+    
+      -t, --tag arg  New tag (default: )
+      -h, --help     Print help
+          --debug    Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:

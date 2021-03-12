@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>set &mdash; DroneDB 1.0.0 documentation</title>
+  <title>tag &mdash; DroneDB 1.0.0 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
   
-    <link rel="canonical" href="https://docs.dronedb.app/commands/set.html"/>
+    <link rel="canonical" href="https://docs.dronedb.app/commands/tag.html"/>
   
 
   
@@ -43,8 +43,8 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="setexif" href="setexif.html" />
-    <link rel="prev" title="remove" href="remove.html" /> 
+    <link rel="next" title="thumbs" href="thumbs.html" />
+    <link rel="prev" title="system" href="system.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -106,15 +106,15 @@
 <li class="toctree-l2"><a class="reference internal" href="logout.html">logout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="password.html">password</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remove.html">remove</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">set</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">set</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setexif.html">setexif</a></li>
 <li class="toctree-l2"><a class="reference internal" href="share.html">share</a></li>
 <li class="toctree-l2"><a class="reference internal" href="status.html">status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sync.html">sync</a></li>
 <li class="toctree-l2"><a class="reference internal" href="system.html">system</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tag.html">tag</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">tag</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="thumbs.html">thumbs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tile.html">tile</a></li>
 </ul>
@@ -169,14 +169,14 @@
         
           <li><a href="index.html">Commands</a> &raquo;</li>
         
-      <li>set</li>
+      <li>tag</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/set.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/tag.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -187,10 +187,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="setexif.html" class="btn btn-neutral float-right" title="setexif" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="thumbs.html" class="btn btn-neutral float-right" title="thumbs" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="remove.html" class="btn btn-neutral float-left" title="remove" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="system.html" class="btn btn-neutral float-left" title="system" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -199,18 +199,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="set">
-<span id="set-command"></span><h1>set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h1>
-<p>Modify EXIF values in files.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ddb set *.JPG [args]
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="nb">input</span> <span class="n">arg</span>    <span class="n">File</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="n">modify</span>
-<span class="o">--</span><span class="n">gps</span><span class="o">-</span><span class="n">alt</span> <span class="n">arg</span>  <span class="n">Set</span> <span class="n">GPS</span> <span class="n">Altitude</span> <span class="p">(</span><span class="n">decimal</span> <span class="n">degrees</span><span class="p">)</span>
-<span class="o">--</span><span class="n">gps</span><span class="o">-</span><span class="n">lon</span> <span class="n">arg</span>  <span class="n">Set</span> <span class="n">GPS</span> <span class="n">Longitude</span> <span class="p">(</span><span class="n">decimal</span> <span class="n">degrees</span><span class="p">)</span>
-<span class="o">--</span><span class="n">gps</span><span class="o">-</span><span class="n">lat</span> <span class="n">arg</span>  <span class="n">Set</span> <span class="n">GPS</span> <span class="n">Latitude</span> <span class="p">(</span><span class="n">decimal</span> <span class="n">degrees</span><span class="p">)</span>
-<span class="o">--</span><span class="n">gps</span> <span class="n">arg</span>      <span class="n">Set</span> <span class="n">GPS</span> <span class="n">Latitude</span><span class="p">,</span><span class="n">Longitude</span><span class="p">,</span><span class="n">Altitude</span> <span class="p">(</span><span class="n">decimal</span> <span class="n">degrees</span><span class="p">,</span>
-               <span class="n">comma</span> <span class="n">separated</span><span class="p">)</span>
+  <div class="section" id="tag">
+<span id="tag-command"></span><h1>tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Gets</span> <span class="ow">or</span> <span class="n">sets</span> <span class="n">the</span> <span class="n">dataset</span> <span class="n">tag</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+  <span class="n">ddb</span> <span class="n">tag</span> <span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
+
+  <span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="o">--</span><span class="n">tag</span> <span class="n">arg</span>  <span class="n">New</span> <span class="n">tag</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="p">)</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>     <span class="n">Print</span> <span class="n">help</span>
+      <span class="o">--</span><span class="n">debug</span>    <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -225,10 +223,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="setexif.html" class="btn btn-neutral float-right" title="setexif" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="thumbs.html" class="btn btn-neutral float-right" title="thumbs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="remove.html" class="btn btn-neutral float-left" title="remove" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="system.html" class="btn btn-neutral float-left" title="system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
