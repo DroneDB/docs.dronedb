@@ -1,0 +1,21 @@
+.. _pull_command:
+
+********************************************************************************
+pull
+********************************************************************************
+
+::
+
+    Pulls changes from remote repository.
+    
+    Usage:
+      ddb pull
+    
+      -r, --remote arg  The remote Registry (default: )
+      -f, --force       Forces the operation
+      -h, --help        Print help
+          --debug       Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:

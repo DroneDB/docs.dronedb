@@ -1,0 +1,21 @@
+.. _push_command:
+
+********************************************************************************
+push
+********************************************************************************
+
+::
+
+    Pushes local changes to remote repository.
+    
+    Usage:
+      ddb push [remote] [args]
+    
+      -r, --remote arg  The remote Registry (default: )
+      -f, --force       Forces the operation
+      -h, --help        Print help
+          --debug       Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:

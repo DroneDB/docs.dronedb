@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tile &mdash; DroneDB 1.0.0 documentation</title>
+  <title>pull &mdash; DroneDB 1.0.0 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
   
-    <link rel="canonical" href="https://docs.dronedb.app/commands/tile.html"/>
+    <link rel="canonical" href="https://docs.dronedb.app/commands/pull.html"/>
   
 
   
@@ -43,8 +43,8 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="Tutorials" href="../tutorials/index.html" />
-    <link rel="prev" title="thumbs" href="thumbs.html" /> 
+    <link rel="next" title="push" href="push.html" />
+    <link rel="prev" title="password" href="password.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -105,7 +105,9 @@
 <li class="toctree-l2"><a class="reference internal" href="login.html">login</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logout.html">logout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="password.html">password</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pull.html">pull</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pull</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="push.html">push</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remove.html">remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set.html">set</a></li>
@@ -116,9 +118,7 @@
 <li class="toctree-l2"><a class="reference internal" href="system.html">system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tag.html">tag</a></li>
 <li class="toctree-l2"><a class="reference internal" href="thumbs.html">thumbs</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">tile</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="tile.html">tile</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
@@ -171,14 +171,14 @@
         
           <li><a href="index.html">Commands</a> &raquo;</li>
         
-      <li>tile</li>
+      <li>pull</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/tile.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/pull.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -189,10 +189,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="push.html" class="btn btn-neutral float-right" title="push" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="thumbs.html" class="btn btn-neutral float-left" title="thumbs" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="password.html" class="btn btn-neutral float-left" title="password" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -201,28 +201,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tile">
-<span id="tile-command"></span><h1>tile<a class="headerlink" href="#tile" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">tiles</span> <span class="k">for</span> <span class="n">GeoTIFFs</span> <span class="ow">and</span> <span class="n">GeoImages</span>
+  <div class="section" id="pull">
+<span id="pull-command"></span><h1>pull<a class="headerlink" href="#pull" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Pulls</span> <span class="n">changes</span> <span class="kn">from</span> <span class="nn">remote</span> <span class="n">repository</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
-  <span class="n">ddb</span> <span class="n">tile</span> <span class="p">[</span><span class="n">geo</span><span class="o">.</span><span class="n">tif</span> <span class="o">|</span> <span class="n">image</span><span class="o">.</span><span class="n">jpg</span><span class="p">]</span> <span class="p">[</span><span class="n">output</span> <span class="n">directory</span><span class="p">]</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
+  <span class="n">ddb</span> <span class="n">pull</span>
 
-  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="nb">input</span> <span class="n">arg</span>   <span class="n">File</span> <span class="n">to</span> <span class="n">tile</span>
-  <span class="o">-</span><span class="n">o</span><span class="p">,</span> <span class="o">--</span><span class="n">output</span> <span class="n">arg</span>  <span class="n">Output</span> <span class="n">directory</span> <span class="n">where</span> <span class="n">to</span> <span class="n">store</span> <span class="n">tiles</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span>
-                    <span class="p">{</span><span class="n">filename</span><span class="p">}</span><span class="n">_tiles</span><span class="o">/</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="nb">format</span> <span class="n">arg</span>  <span class="n">Output</span> <span class="nb">format</span> <span class="p">(</span><span class="n">text</span><span class="o">|</span><span class="n">json</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">text</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">z</span><span class="p">,</span> <span class="n">arg</span>           <span class="n">Zoom</span> <span class="n">levels</span><span class="p">,</span> <span class="n">either</span> <span class="n">a</span> <span class="n">single</span> <span class="n">zoom</span> <span class="n">level</span> <span class="s2">&quot;N&quot;</span> <span class="ow">or</span> <span class="n">a</span> <span class="nb">range</span>
-                    <span class="s2">&quot;min-max&quot;</span> <span class="ow">or</span> <span class="s2">&quot;auto&quot;</span> <span class="n">to</span> <span class="n">generate</span> <span class="nb">all</span> <span class="n">zoom</span> <span class="n">levels</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span>
-                    <span class="n">auto</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="n">arg</span>           <span class="n">Generate</span> <span class="n">a</span> <span class="n">single</span> <span class="n">tile</span> <span class="k">with</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">coordinate</span>
-                    <span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">unless</span> <span class="o">--</span><span class="n">tms</span> <span class="ow">is</span> <span class="n">used</span><span class="p">)</span><span class="o">.</span> <span class="n">Must</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span> <span class="o">-</span><span class="n">y</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span>
-                    <span class="n">auto</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">y</span><span class="p">,</span> <span class="n">arg</span>           <span class="n">Generate</span> <span class="n">a</span> <span class="n">single</span> <span class="n">tile</span> <span class="k">with</span> <span class="n">the</span> <span class="n">specified</span> <span class="n">coordinate</span>
-                    <span class="p">(</span><span class="n">XYZ</span><span class="p">,</span> <span class="n">unless</span> <span class="o">--</span><span class="n">tms</span> <span class="ow">is</span> <span class="n">used</span><span class="p">)</span><span class="o">.</span> <span class="n">Must</span> <span class="n">be</span> <span class="n">used</span> <span class="k">with</span> <span class="o">-</span><span class="n">x</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span>
-                    <span class="n">auto</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">size</span> <span class="n">arg</span>    <span class="n">Tile</span> <span class="n">size</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">256</span><span class="p">)</span>
-      <span class="o">--</span><span class="n">tms</span>         <span class="n">Generate</span> <span class="n">TMS</span> <span class="n">tiles</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">XYZ</span>
+  <span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="o">--</span><span class="n">remote</span> <span class="n">arg</span>  <span class="n">The</span> <span class="n">remote</span> <span class="n">Registry</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="p">)</span>
+  <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="n">force</span>       <span class="n">Forces</span> <span class="n">the</span> <span class="n">operation</span>
   <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>        <span class="n">Print</span> <span class="n">help</span>
       <span class="o">--</span><span class="n">debug</span>       <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
 </pre></div>
@@ -239,10 +226,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tutorials/index.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="push.html" class="btn btn-neutral float-right" title="push" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="thumbs.html" class="btn btn-neutral float-left" title="thumbs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="password.html" class="btn btn-neutral float-left" title="password" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
