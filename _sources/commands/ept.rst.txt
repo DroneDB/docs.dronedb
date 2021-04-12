@@ -1,0 +1,21 @@
+.. _ept_command:
+
+********************************************************************************
+ept
+********************************************************************************
+
+::
+
+    Build an EPT index from point cloud files.
+    
+    Usage:
+      ddb ept outdir/ *.las [args]
+    
+      -o, --output arg  Output directory where to store EPT data
+      -i, --input arg   File(s) to process
+      -h, --help        Print help
+          --debug       Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
