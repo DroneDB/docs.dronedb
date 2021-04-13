@@ -91,8 +91,7 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">About</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#background">Background</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#features">Features</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="#what-s-the-vision">What’s the vision?</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -179,18 +178,12 @@
             
   <div class="section" id="about">
 <span id="id1"></span><h1>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
-<p>In the past few years, the use of Unmanned Aerial Vehicles (UAVs) for the acquisition of high-resolution imagery has increased dramatically, due to lower costs of hardware and technology improvements. Going forward, the amount of aerial data acquired for processing and analysis is going to increase and will require new solutions to be developed to handle such data at scale.</p>
-<p>An innovative system capable of overcoming the limitations of existing solutions in terms of storing and indexing large amounts of geospatial files, including raw aerial images, elevation models, orthophotos, point clouds and metadata such as reports, user-defined information and any other data associated with files is needed.</p>
-<p>DroneDB is such system.</p>
-</div>
-<div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
-<p>DroneDB can index and extract useful information from aerial data. The most common types of data are raw images captured from a drone. DroneDB can read the EXIF/XMP tags of aerial images to display and calculate things like image footprint, flight path and image GPS location. It has timezone-aware date parsing capabilities, a camera sensor database and a DSM lookup system. DroneDB is smarter than other general-purpose EXIF tools because it focuses primarely on aerial imagery. It can deal with proprietary vendor tags and better parse ambiguous data based on a camera database. It’s also much better in the handling of geospatial data.</p>
-<p>But it doesn’t end here; DroneDB supports other types of data such as those used to represent orthophotos, point clouds, elevation models, plant health maps, ground control point files, flight logs and other files that are common in aerial survey workflows.</p>
-<p>All of this aerial data can be indexed into a database, synced to a repository, augmented and managed in a distributed, scalable manner. DroneDB makes aerial data discoverable and queryable.</p>
-<p>This vision requires a lot of work, so not all of the features listed here are available today. But there’s already a lot you can do with DroneDB. See the list of commands for details.</p>
+<div class="section" id="what-s-the-vision">
+<h2>What’s the vision?<a class="headerlink" href="#what-s-the-vision" title="Permalink to this headline">¶</a></h2>
+<p>Acquisition of UAV data has increased dramatically in recent years. The storage systems we use to handle this data are either too generic (don’t take advantage of the metadata available), too complicated or are tied to black-box proprietary solutions that can’t be easily setup or extended.</p>
+<p>DroneDB can index your aerial data and automatically plot things like image footprint, flight path and image GPS location. It generates tiles for the data when needed, so that you can display large orthophotos or point clouds directly from your phone. It handles common data products that are the result of UAV missions, like images, orthophotos, point clouds, elevation models, plant health maps, ground control point files, flight logs and other files that are common in aerial survey workflows. You can add supporting documentation files describing datasets and licenses using markdown syntax.</p>
+<p>All of this aerial data can be synced to a repository, augmented and managed in a distributed, scalable manner. DroneDB makes aerial data discoverable and queryable. You also don’t have to sync it. You can work entirely offline too!</p>
+<p>This vision requires a lot of work, so not all of the features listed here are available today. But there’s already a lot you can do with DroneDB. See the list of commands or the tutorials for details.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

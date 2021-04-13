@@ -94,10 +94,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../commands/index.html">Commands</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#indexing-files">Indexing Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sharing-datasets">Sharing datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-datasets">Editing datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-readme-license">Adding a README/LICENSE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#projecting-an-image-onto-a-map">Projecting an image onto a map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-gps-location-of-photos">Setting GPS location of photos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-static-tiles-xyz-tms">Creating static tiles (XYZ/TMS)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#browsing-data-with-qgis">Browsing data with QGIS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#viewing-flight-path-linestring">Viewing Flight Path LineString</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#extracting-gps-locations-footprints-to-geojson">Extracting GPS locations/footprints to GeoJSON</a><ul class="simple">
 </ul>
 </li>
@@ -182,47 +185,93 @@
             
   <div class="section" id="tutorials">
 <span id="id1"></span><h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="indexing-files">
-<h2>Indexing Files<a class="headerlink" href="#indexing-files" title="Permalink to this headline">¶</a></h2>
-<p>To create a new index:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">init</span>
+<p>You can do all sort of useful tasks related to aerial data management with DroneDB. Here are some examples:</p>
+<div class="section" id="sharing-datasets">
+<h2>Sharing datasets<a class="headerlink" href="#sharing-datasets" title="Permalink to this headline">¶</a></h2>
+<p>From a directory with images, simply type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">share</span> <span class="o">*.</span><span class="n">JPG</span>
 </pre></div>
 </div>
-<p>To add images to an index:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">add</span> <span class="n">images</span><span class="o">/</span>
-<span class="n">ddb</span> <span class="n">add</span> <span class="n">images</span><span class="o">/</span><span class="n">DJI_0018</span><span class="o">.</span><span class="n">JPG</span>
-<span class="n">ddb</span> <span class="n">add</span> <span class="n">images</span><span class="o">/*.</span><span class="n">JPG</span>
+<p>By default the images are shared with DroneDB’s Hub. You will need to <a class="reference external" href="https://dronedb.app">register an account</a> to get a username and password. But you can also run your own Registry, on your own infrastructure. We have two implementations available:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://github.com/DroneDB/Registry">https://github.com/DroneDB/Registry</a></p></li>
+<li><p><a class="reference external" href="https://github.com/DroneDB/MiniReg">https://github.com/DroneDB/MiniReg</a></p></li>
+</ul>
+</div></blockquote>
+<p>You can then select a different Registry by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">share</span> <span class="o">*.</span><span class="n">JPG</span> <span class="o">-</span><span class="n">s</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
 </pre></div>
 </div>
-<p>To remove images from an index:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">rm</span> <span class="n">images</span><span class="o">/</span><span class="n">DJI_0018</span><span class="o">.</span><span class="n">JPG</span>
+<p>At the end of the process, you will get a URL back:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">testhub1</span><span class="o">.</span><span class="n">dronedb</span><span class="o">.</span><span class="n">app</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">pierotofy</span><span class="o">/</span><span class="mi">193514313</span><span class="n">aba4949ab5578b28ba1dd5b</span>
 </pre></div>
 </div>
-<p>To sync an index after filesystem changes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">sync</span>
+<p>Because we didn’t set a <code class="docutils literal notranslate"><span class="pre">tag</span></code>, DroneDB generated a random one for you. You can change the tag by visiting the URL. You can also explicitly set a tag, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">share</span> <span class="o">*.</span><span class="n">JPG</span> <span class="o">-</span><span class="n">t</span> <span class="n">pierotofy</span><span class="o">/</span><span class="n">brighton</span>
 </pre></div>
 </div>
+<p>Or if you’re running your own Registry:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">share</span> <span class="o">*.</span><span class="n">JPG</span> <span class="o">-</span><span class="n">t</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="n">brighton</span>
+</pre></div>
+</div>
+<p>Tags are defined as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[server]/organization/dataset</span></code></p>
+<p>With the server component being optional.</p>
+</div>
+<div class="section" id="editing-datasets">
+<h2>Editing datasets<a class="headerlink" href="#editing-datasets" title="Permalink to this headline">¶</a></h2>
+<p>In DroneDB you can <code class="docutils literal notranslate"><span class="pre">clone</span></code> (download, or checkout) an existing dataset from a Registry, make modifications locally (offline), then sync back your changes.</p>
+<p>Let’s use this dataset: <a class="reference external" href="https://testhub1.dronedb.app/r/pierotofy/brighton">https://testhub1.dronedb.app/r/pierotofy/brighton</a></p>
+<p>You can clone it via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">clone</span> <span class="n">testhub1</span><span class="o">.</span><span class="n">dronedb</span><span class="o">.</span><span class="n">app</span><span class="o">/</span><span class="n">pierotofy</span><span class="o">/</span><span class="n">brighton</span>
+</pre></div>
+</div>
+<p>Let’s add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file that describes the dataset:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">brighton</span><span class="o">/</span>
+<span class="n">ddb</span> <span class="n">add</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>Great! We are now ready to push the changes.</p>
+<p>(Currently this functionality is being built, so it’s probably not going to work):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">push</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-a-readme-license">
+<h2>Adding a README/LICENSE<a class="headerlink" href="#adding-a-readme-license" title="Permalink to this headline">¶</a></h2>
+<p>If a dataset contains a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and/or a <code class="docutils literal notranslate"><span class="pre">LICENSE.md</span></code> file, they will be picked up and displayed accordingly on the Registry:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">share</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span> <span class="n">LICENSE</span><span class="o">.</span><span class="n">md</span>
+</pre></div>
+</div>
+<p>The files can contain valid <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">Markdown</a> syntax, including images, links, tables, etc.</p>
+<p><a class="reference external" href="https://testhub1.dronedb.app/r/pierotofy/license">https://testhub1.dronedb.app/r/pierotofy/license</a></p>
 </div>
 <div class="section" id="projecting-an-image-onto-a-map">
 <h2>Projecting an image onto a map<a class="headerlink" href="#projecting-an-image-onto-a-map" title="Permalink to this headline">¶</a></h2>
 <img alt="https://user-images.githubusercontent.com/1951843/68077866-001de800-fda2-11e9-895f-b5840d9d047d.png" src="https://user-images.githubusercontent.com/1951843/68077866-001de800-fda2-11e9-895f-b5840d9d047d.png" />
-<p>You can project images onto a map. This does not require an index and can be done on-the-fly.</p>
+<p>Have you ever wondered how a picture looks like on a map? With DroneDB you can project images onto a map. This does not require an index and can be done on-the-fly.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">geoproj</span> <span class="n">images</span><span class="o">/</span><span class="n">DJI_0018</span><span class="o">.</span><span class="n">JPG</span> <span class="o">-</span><span class="n">o</span> <span class="n">projected</span><span class="o">/</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-gps-location-of-photos">
+<h2>Setting GPS location of photos<a class="headerlink" href="#setting-gps-location-of-photos" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes images lack the proper GPS tags. You can use DroneDB to set them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">setexif</span> <span class="n">DJI_0018</span><span class="o">.</span><span class="n">JPG</span> <span class="o">--</span><span class="n">gps</span> <span class="mf">46.84260708333</span><span class="p">,</span><span class="o">-</span><span class="mf">91.99455988889</span><span class="p">,</span><span class="mf">198.31</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-static-tiles-xyz-tms">
+<h2>Creating static tiles (XYZ/TMS)<a class="headerlink" href="#creating-static-tiles-xyz-tms" title="Permalink to this headline">¶</a></h2>
+<p>DroneDB can create static tiles for GeoTIFFs and drone images (if they can be geoprojected). It’s similar to the <a class="reference external" href="https://gdal.org/programs/gdal2tiles.html">gdal2tiles.py</a> program, but it’s a bit faster and can handle drone images as well! You can use these tiles in applications such as Leaflet or OpenLayers to display them on the web.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">tile</span> <span class="n">DJI_0018</span><span class="o">.</span><span class="n">JPG</span> <span class="n">output_tiles</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="browsing-data-with-qgis">
 <h2>Browsing data with QGIS<a class="headerlink" href="#browsing-data-with-qgis" title="Permalink to this headline">¶</a></h2>
-<p>You can explore the indexed data with a program such as QGIS. The index creates a <cite>.ddb/dbase.sqlite</cite> file when running the <cite>ddb init</cite> command. This is a SpatiaLite database and can be imported by adding a new SpatiaLite layer.</p>
-</div>
-<div class="section" id="viewing-flight-path-linestring">
-<h2>Viewing Flight Path LineString<a class="headerlink" href="#viewing-flight-path-linestring" title="Permalink to this headline">¶</a></h2>
-<img alt="https://user-images.githubusercontent.com/1951843/66138811-3dd5f800-e5cd-11e9-816d-a0efa39ccca5.png" src="https://user-images.githubusercontent.com/1951843/66138811-3dd5f800-e5cd-11e9-816d-a0efa39ccca5.png" />
-<p>Create a new query similar to:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">AsGeoJSON</span><span class="p">(</span><span class="n">MakeLine</span><span class="p">(</span><span class="n">point_geom</span><span class="p">))</span> <span class="n">FROM</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">point_geom</span><span class="p">,</span> <span class="n">json_extract</span><span class="p">(</span><span class="n">meta</span><span class="p">,</span> <span class="s1">&#39;$.captureTime&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">captureTime</span> <span class="n">FROM</span> <span class="n">entries</span> <span class="n">ORDER</span> <span class="n">by</span> <span class="n">captureTime</span> <span class="n">ASC</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>The ‘point_geom’ column contains the GPS locations, while ‘polygon_geom’ has the footprint extents. Footprint extents can be calculated only if gimbal orientation and camera parameters are present.</p>
+<p>You can explore the a DroneDB dataset with a program such as QGIS too. Every DroneDB dataset contains <cite>.ddb/dbase.sqlite</cite> file. This is a SpatiaLite database and can be imported by adding a new SpatiaLite layer in QGIS.</p>
 </div>
 <div class="section" id="extracting-gps-locations-footprints-to-geojson">
 <h2>Extracting GPS locations/footprints to GeoJSON<a class="headerlink" href="#extracting-gps-locations-footprints-to-geojson" title="Permalink to this headline">¶</a></h2>
@@ -232,6 +281,10 @@
 </div>
 <p>Or for image footprints:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">info</span> <span class="o">*.</span><span class="n">JPG</span> <span class="o">-</span><span class="n">f</span> <span class="n">geojson</span> <span class="o">--</span><span class="n">geometry</span> <span class="n">polygon</span> <span class="o">-</span><span class="n">o</span> <span class="n">footprint</span><span class="o">.</span><span class="n">geojson</span>
+</pre></div>
+</div>
+<p>This works with orthophotos, elevation models and point clouds as well!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">info</span> <span class="n">point_cloud</span><span class="o">.</span><span class="n">laz</span> <span class="o">-</span><span class="n">f</span> <span class="n">geojson</span> <span class="o">--</span><span class="n">geometry</span> <span class="n">polygon</span> <span class="o">-</span><span class="n">o</span> <span class="n">footprint</span><span class="o">.</span><span class="n">geojson</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
