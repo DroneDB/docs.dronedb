@@ -6,7 +6,7 @@ pull
 
 ::
 
-    Pulls changes from remote repository.
+    Pulls changes from a remote repository.
     
     Usage:
       ddb pull

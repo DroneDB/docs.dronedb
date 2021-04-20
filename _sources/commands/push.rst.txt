@@ -6,7 +6,7 @@ push
 
 ::
 
-    Pushes local changes to remote repository.
+    Pushes changes to a remote repository.
     
     Usage:
       ddb push [remote] [args]
