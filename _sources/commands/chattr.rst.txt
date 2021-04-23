@@ -10,7 +10,7 @@ chattr
     
     Attributes:
     	public	mark database as publicly accessible
-    mtime gets last database update
+    
     
     Usage:
       ddb chattr [+-attribute] [args]
