@@ -6,14 +6,17 @@ build
 
 ::
 
-    Initialize and build an index. Shorthand for running an init,add,commit command sequence.
+    Build DroneDB files for efficient streaming over a network.
     
     Usage:
-      ddb build [args] [PATHS]
+      ddb build [-p path/to/file.laz] [--output out_dir] [args]
     
-          --paths arg  Paths
-      -h, --help       Print help
-          --debug      Show debug output
+      -o, --output arg       Output folder (default: .ddb/build)
+      -p, --path arg         File to process
+      -w, --working-dir arg  Working directory (default: .)
+      -f, --force            Force rebuild
+      -h, --help             Print help
+          --debug            Show debug output
 
 .. toctree::
     :maxdepth: 2
