@@ -6,12 +6,12 @@ tile
 
 ::
 
-    Generate tiles for GeoTIFFs and GeoImages
+    Generate tiles for GeoTIFFs, GeoImages and EPT
     
     Usage:
-      ddb tile [geo.tif | image.jpg] [output directory] [args]
+      ddb tile [geo.tif | image.jpg | ept.json | https://host.com/cog.tif | https://host.com/ept.json] [output directory] [args]
     
-      -i, --input arg   File to tile
+      -i, --input arg   Path or URL to file to tile
       -o, --output arg  Output directory where to store tiles (default:
                         {filename}_tiles/)
       -f, --format arg  Output format (text|json) (default: text)
