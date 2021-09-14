@@ -1,0 +1,25 @@
+.. _meta_command:
+
+********************************************************************************
+meta
+********************************************************************************
+
+::
+
+    Manage database metadata
+    
+    Usage:
+      ddb meta [add|set|rm|get|unset|ls] [args] [args]
+    
+      -c, --command arg      Command
+      -k, --key arg          Metadata key/ID (default: )
+      -p, --path arg         Path to associate metadata with (default: .)
+      -d, --data arg         Data string|number|JSON to set (default: )
+      -w, --working-dir arg  Working directory (default: .)
+      -f, --format arg       Output format (text|json) (default: text)
+      -h, --help             Print help
+          --debug            Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
