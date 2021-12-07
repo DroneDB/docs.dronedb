@@ -1,0 +1,21 @@
+.. _cog_command:
+
+********************************************************************************
+cog
+********************************************************************************
+
+::
+
+    Build a Cloud Optimized GeoTIFF from an existing GeoTIFF.
+    
+    Usage:
+      ddb cog cog.tif input.tif [args]
+    
+      -o, --output arg  Output Cloud Optimized GeoTIFF
+      -i, --input arg   Input GeoTIFF to process
+      -h, --help        Print help
+          --debug       Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
