@@ -12,7 +12,6 @@ push
       ddb push [remote] [args]
     
       -r, --remote arg  The remote Registry (default: )
-      -f, --force       Forces the operation
       -h, --help        Print help
           --debug       Show debug output
 

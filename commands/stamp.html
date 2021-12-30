@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>setexif &mdash; DroneDB 1.0.0 documentation</title>
+  <title>stamp &mdash; DroneDB 1.0.0 documentation</title>
   
 
   
@@ -21,7 +21,7 @@
   
   
   
-    <link rel="canonical" href="https://docs.dronedb.app/commands/setexif.html"/>
+    <link rel="canonical" href="https://docs.dronedb.app/commands/stamp.html"/>
   
 
   
@@ -43,8 +43,8 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="share" href="share.html" />
-    <link rel="prev" title="set" href="set.html" /> 
+    <link rel="next" title="status" href="status.html" />
+    <link rel="prev" title="share" href="share.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -112,11 +112,11 @@
 <li class="toctree-l2"><a class="reference internal" href="push.html">push</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remove.html">remove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set.html">set</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">setexif</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="setexif.html">setexif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="share.html">share</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">stamp</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="share.html">share</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stamp.html">stamp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="status.html">status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sync.html">sync</a></li>
 <li class="toctree-l2"><a class="reference internal" href="system.html">system</a></li>
@@ -175,14 +175,14 @@
         
           <li><a href="index.html">Commands</a> &raquo;</li>
         
-      <li>setexif</li>
+      <li>stamp</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/setexif.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/uav4geo/DroneDB/edit/master/doc/commands/stamp.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -193,10 +193,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="share.html" class="btn btn-neutral float-right" title="share" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="status.html" class="btn btn-neutral float-right" title="status" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="set.html" class="btn btn-neutral float-left" title="set" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="share.html" class="btn btn-neutral float-left" title="share" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -205,21 +205,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="setexif">
-<span id="setexif-command"></span><h1>setexif<a class="headerlink" href="#setexif" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Modify</span> <span class="n">EXIF</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">files</span><span class="o">.</span>
+  <div class="section" id="stamp">
+<span id="stamp-command"></span><h1>stamp<a class="headerlink" href="#stamp" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generate</span> <span class="n">a</span> <span class="n">stamp</span> <span class="n">of</span> <span class="n">the</span> <span class="n">current</span> <span class="n">index</span><span class="o">.</span>
 
 <span class="n">Usage</span><span class="p">:</span>
-  <span class="n">ddb</span> <span class="n">setexif</span> <span class="o">*.</span><span class="n">JPG</span> <span class="p">[</span><span class="n">args</span><span class="p">]</span>
+  <span class="n">ddb</span> <span class="n">stamp</span>
 
-  <span class="o">-</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="nb">input</span> <span class="n">arg</span>    <span class="n">File</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">to</span> <span class="n">modify</span>
-      <span class="o">--</span><span class="n">gps</span><span class="o">-</span><span class="n">alt</span> <span class="n">arg</span>  <span class="n">Set</span> <span class="n">GPS</span> <span class="n">Altitude</span> <span class="p">(</span><span class="n">decimal</span> <span class="n">degrees</span><span class="p">)</span>
-      <span class="o">--</span><span class="n">gps</span><span class="o">-</span><span class="n">lon</span> <span class="n">arg</span>  <span class="n">Set</span> <span class="n">GPS</span> <span class="n">Longitude</span> <span class="p">(</span><span class="n">decimal</span> <span class="n">degrees</span><span class="p">)</span>
-      <span class="o">--</span><span class="n">gps</span><span class="o">-</span><span class="n">lat</span> <span class="n">arg</span>  <span class="n">Set</span> <span class="n">GPS</span> <span class="n">Latitude</span> <span class="p">(</span><span class="n">decimal</span> <span class="n">degrees</span><span class="p">)</span>
-      <span class="o">--</span><span class="n">gps</span> <span class="n">arg</span>      <span class="n">Set</span> <span class="n">GPS</span> <span class="n">Latitude</span><span class="p">,</span><span class="n">Longitude</span><span class="p">,</span><span class="n">Altitude</span> <span class="p">(</span><span class="n">decimal</span> <span class="n">degrees</span><span class="p">,</span>
-                     <span class="n">comma</span> <span class="n">separated</span><span class="p">)</span>
-  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>         <span class="n">Print</span> <span class="n">help</span>
-      <span class="o">--</span><span class="n">debug</span>        <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
+  <span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="o">--</span><span class="n">working</span><span class="o">-</span><span class="nb">dir</span> <span class="n">arg</span>  <span class="n">Working</span> <span class="n">directory</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="o">.</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">f</span><span class="p">,</span> <span class="o">--</span><span class="nb">format</span> <span class="n">arg</span>       <span class="n">Output</span> <span class="nb">format</span> <span class="p">(</span><span class="n">text</span><span class="o">|</span><span class="n">json</span><span class="p">)</span> <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="n">text</span><span class="p">)</span>
+  <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>             <span class="n">Print</span> <span class="n">help</span>
+      <span class="o">--</span><span class="n">debug</span>            <span class="n">Show</span> <span class="n">debug</span> <span class="n">output</span>
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -234,10 +230,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="share.html" class="btn btn-neutral float-right" title="share" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="status.html" class="btn btn-neutral float-right" title="status" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="set.html" class="btn btn-neutral float-left" title="set" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="share.html" class="btn btn-neutral float-left" title="share" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

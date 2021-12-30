@@ -11,10 +11,12 @@ pull
     Usage:
       ddb pull
     
-      -r, --remote arg  The remote Registry (default: )
-      -f, --force       Forces the operation
-      -h, --help        Print help
-          --debug       Show debug output
+      -r, --remote arg   The remote Registry (default: )
+      -t, --keep-theirs  Keep changes from remote registry and override local
+                         ones
+      -o, --keep-ours    Keep local changes override remote ones
+      -h, --help         Print help
+          --debug        Show debug output
 
 .. toctree::
     :maxdepth: 2
