@@ -11,8 +11,7 @@ logout
     Usage:
       ddb logout [args]
     
-          --server arg  Registry server to logout from (default:
-                        testhub.dronedb.app)
+          --server arg  Registry server to logout from (default: hub.dronedb.app)
       -h, --help        Print help
           --debug       Show debug output
 
