@@ -39,12 +39,11 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="License" href="../copyright.html" />
-    <link rel="prev" title="tile" href="../commands/tile.html" /> 
+    <link rel="next" title="Commands" href="../commands/index.html" />
+    <link rel="prev" title="Download" href="../download.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -90,13 +89,12 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../commands/index.html">Commands</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#sharing-datasets">Sharing datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#editing-datasets">Editing datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#adding-a-readme-license">Adding a README/LICENSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#metadata-entries">Metadata Entries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#projecting-an-image-onto-a-map">Projecting an image onto a map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setting-gps-location-of-photos">Setting GPS location of photos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-static-tiles-xyz-tms">Creating static tiles (XYZ/TMS)</a></li>
@@ -106,6 +104,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/index.html">Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../copyright.html">License</a></li>
 </ul>
 
@@ -171,10 +170,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../copyright.html" class="btn btn-neutral float-right" title="License" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../commands/index.html" class="btn btn-neutral float-right" title="Commands" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../commands/tile.html" class="btn btn-neutral float-left" title="tile" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../download.html" class="btn btn-neutral float-left" title="Download" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -185,26 +184,17 @@
             
   <div class="section" id="tutorials">
 <span id="id1"></span><h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
-<p>You can do all sort of useful tasks related to aerial data management with DroneDB. Here are some examples:</p>
+<p>You can do all sort operations with DroneDB. We recommend to check out the list of <a class="reference external" href="/commands/index.html">Commands</a>. Here are some (non-exhaustive) examples:</p>
 <div class="section" id="sharing-datasets">
 <h2>Sharing datasets<a class="headerlink" href="#sharing-datasets" title="Permalink to this headline">¶</a></h2>
 <p>From a directory with images, simply type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">share</span> <span class="o">*.</span><span class="n">JPG</span>
 </pre></div>
 </div>
-<p>By default the images are shared with DroneDB’s Hub. You will need to <a class="reference external" href="https://dronedb.app">register an account</a> to get a username and password. But you can also run your own Registry, on your own infrastructure. We have two implementations available:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/DroneDB/Registry">https://github.com/DroneDB/Registry</a></p></li>
-<li><p><a class="reference external" href="https://github.com/DroneDB/MiniReg">https://github.com/DroneDB/MiniReg</a></p></li>
-</ul>
-</div></blockquote>
-<p>You can then select a different Registry by typing:</p>
+<p>By default the images are shared with DroneDB’s Hub. You will need to <a class="reference external" href="https://dronedb.app">register an account</a> to get a username and password. But you can also self-host your own <a class="reference external" href="https://github.com/DroneDB/Registry">Registry</a>.</p>
+<p>You can select a different Registry by typing:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">share</span> <span class="o">*.</span><span class="n">JPG</span> <span class="o">-</span><span class="n">s</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
-</pre></div>
-</div>
-<p>At the end of the process, you will get a URL back:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">testhub1</span><span class="o">.</span><span class="n">dronedb</span><span class="o">.</span><span class="n">app</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">pierotofy</span><span class="o">/</span><span class="mi">193514313</span><span class="n">aba4949ab5578b28ba1dd5b</span>
+<span class="o">--&gt;</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="mi">193514313</span><span class="n">aba4949ab5578b28ba1dd5b</span>
 </pre></div>
 </div>
 <p>Because we didn’t set a <code class="docutils literal notranslate"><span class="pre">tag</span></code>, DroneDB generated a random one for you. You can change the tag by visiting the URL. You can also explicitly set a tag, like so:</p>
@@ -221,20 +211,25 @@
 </div>
 <div class="section" id="editing-datasets">
 <h2>Editing datasets<a class="headerlink" href="#editing-datasets" title="Permalink to this headline">¶</a></h2>
-<p>In DroneDB you can <code class="docutils literal notranslate"><span class="pre">clone</span></code> (download, or checkout) an existing dataset from a Registry, make modifications locally (offline), then sync back your changes.</p>
-<p>Let’s use this dataset: <a class="reference external" href="https://testhub1.dronedb.app/r/pierotofy/brighton">https://testhub1.dronedb.app/r/pierotofy/brighton</a></p>
+<p>Using the Web UI provided by Registry is the easiest way to make changes.</p>
+<p>In DroneDB you can also <code class="docutils literal notranslate"><span class="pre">clone</span></code> (download) an existing dataset from a Registry for offline use, make modifications, then sync back your changes.</p>
+<p>Let’s use this dataset: <a class="reference external" href="https://hub.dronedb.app/r/pierotofy/brighton-beach">https://hub.dronedb.app/r/pierotofy/brighton-beach</a></p>
 <p>You can clone it via:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">clone</span> <span class="n">testhub1</span><span class="o">.</span><span class="n">dronedb</span><span class="o">.</span><span class="n">app</span><span class="o">/</span><span class="n">pierotofy</span><span class="o">/</span><span class="n">brighton</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">clone</span> <span class="n">pierotofy</span><span class="o">/</span><span class="n">brighton</span><span class="o">-</span><span class="n">beach</span>
 </pre></div>
 </div>
-<p>Let’s add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file that describes the dataset:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">brighton</span><span class="o">/</span>
+<p>Let’s add a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file that describes the dataset. Create a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file using <a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">Markdown</a> syntax and save it in the <code class="docutils literal notranslate"><span class="pre">brighton-beach</span></code> directory. Afterwards:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">brighton</span><span class="o">-</span><span class="n">beach</span><span class="o">/</span>
 <span class="n">ddb</span> <span class="n">add</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
 </pre></div>
 </div>
 <p>Great! We are now ready to push the changes.</p>
-<p>(Currently this functionality is being built, so it’s probably not going to work):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">push</span>
+</pre></div>
+</div>
+<p>Uuups! This will trigger an error, since we don’t have permission to make modifications to this dataset (it belongs to <code class="docutils literal notranslate"><span class="pre">pierotofy</span></code>). Let’s make our own copy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">tag</span> <span class="n">myuser</span><span class="o">/</span><span class="n">brighton</span><span class="o">-</span><span class="n">copy</span>
+<span class="n">ddb</span> <span class="n">push</span>
 </pre></div>
 </div>
 </div>
@@ -245,7 +240,23 @@
 </pre></div>
 </div>
 <p>The files can contain valid <a class="reference external" href="https://www.markdownguide.org/basic-syntax/">Markdown</a> syntax, including images, links, tables, etc.</p>
-<p><a class="reference external" href="https://testhub1.dronedb.app/r/pierotofy/license">https://testhub1.dronedb.app/r/pierotofy/license</a></p>
+</div>
+<div class="section" id="metadata-entries">
+<h2>Metadata Entries<a class="headerlink" href="#metadata-entries" title="Permalink to this headline">¶</a></h2>
+<p>DroneDB supports the addition of metadata to any file or directory within the index. This can be used to store information of any kind in JSON format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">meta</span> <span class="nb">set</span> <span class="n">pilot</span> <span class="s1">&#39;{&quot;name&quot;: &quot;John Smith&quot;}&#39;</span>
+<span class="n">ddb</span> <span class="n">meta</span> <span class="n">get</span> <span class="n">pilot</span> <span class="o">--</span><span class="nb">format</span> <span class="n">json</span>
+<span class="o">--&gt;</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;John S.&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;ff4f0f26-8741-4423-bde5-b445750937bb&quot;</span><span class="p">,</span><span class="s2">&quot;mtime&quot;</span><span class="p">:</span><span class="mi">1640985850</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">add</span> <span class="n">photo</span><span class="o">.</span><span class="n">JPG</span>
+<span class="n">ddb</span> <span class="n">meta</span> <span class="n">add</span> <span class="n">comments</span> <span class="s1">&#39;{&quot;text&quot;: &quot;Nice one!&quot;, &quot;author&quot;: &quot;John S.&quot;}&#39;</span> <span class="o">-</span><span class="n">p</span> <span class="n">photo</span><span class="o">.</span><span class="n">JPG</span>
+<span class="n">ddb</span> <span class="n">meta</span> <span class="n">get</span> <span class="n">comments</span> <span class="o">-</span><span class="n">p</span> <span class="n">photo</span><span class="o">.</span><span class="n">JPG</span> <span class="o">--</span><span class="nb">format</span> <span class="n">json</span>
+<span class="o">--&gt;</span> <span class="p">[{</span><span class="s2">&quot;data&quot;</span><span class="p">:{</span><span class="s2">&quot;author&quot;</span><span class="p">:</span><span class="s2">&quot;John S.&quot;</span><span class="p">,</span><span class="s2">&quot;text&quot;</span><span class="p">:</span><span class="s2">&quot;Nice one!&quot;</span><span class="p">},</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;550d0b5c-108b-4996-b7e8-467b4cb87937&quot;</span><span class="p">,</span><span class="s2">&quot;mtime&quot;</span><span class="p">:</span><span class="mi">1640986217</span><span class="p">}]</span>
+</pre></div>
+</div>
+<p>Singular and plural metadata keys are supported. Plural keys (ending with <code class="docutils literal notranslate"><span class="pre">s</span></code>) are treated as lists, whereas singular keys are objects.</p>
+<p>Metadata entries are synced on push/pull and people working on the same dataset while offline can later sync back online without conflicts.</p>
 </div>
 <div class="section" id="projecting-an-image-onto-a-map">
 <h2>Projecting an image onto a map<a class="headerlink" href="#projecting-an-image-onto-a-map" title="Permalink to this headline">¶</a></h2>
@@ -300,10 +311,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../copyright.html" class="btn btn-neutral float-right" title="License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../commands/index.html" class="btn btn-neutral float-right" title="Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../commands/tile.html" class="btn btn-neutral float-left" title="tile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../download.html" class="btn btn-neutral float-left" title="Download" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
