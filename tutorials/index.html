@@ -227,8 +227,8 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">push</span>
 </pre></div>
 </div>
-<p>Uuups! This will trigger an error, since we don’t have permission to make modifications to this dataset (it belongs to <code class="docutils literal notranslate"><span class="pre">pierotofy</span></code>). Let’s make our own copy:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">tag</span> <span class="n">myuser</span><span class="o">/</span><span class="n">brighton</span><span class="o">-</span><span class="n">copy</span>
+<p>Uuups! This will trigger an error, since we don’t have permission to make modifications to this dataset (it belongs to <code class="docutils literal notranslate"><span class="pre">pierotofy</span></code>). Let’s make our own copy to a different Registry server and user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ddb</span> <span class="n">tag</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">admin</span><span class="o">/</span><span class="n">brighton</span><span class="o">-</span><span class="n">copy</span>
 <span class="n">ddb</span> <span class="n">push</span>
 </pre></div>
 </div>
@@ -325,7 +325,7 @@
     <p>
         
         
-        &copy; <a href="../copyright.html">Copyright</a> 2021, DroneDB authors
+        &copy; <a href="../copyright.html">Copyright</a> 2022, DroneDB authors
 
     </p>
   </div> 
@@ -352,7 +352,7 @@
   
     <div class="footer">
         <div class="container">
-                    &copy;  2021, DroneDB authors
+                    &copy;  2022, DroneDB authors
                         <a href="http://github.com/uav4geo/DroneDB/graphs/contributors">DroneDB Authors</a>,
         </div>
     </div>
