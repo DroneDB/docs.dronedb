@@ -1,0 +1,22 @@
+.. _nxs_command:
+
+********************************************************************************
+nxs
+********************************************************************************
+
+::
+
+    Generate nexus (NXS/NXZ) files from OBJs.
+    
+    Usage:
+      ddb nxs model.obj [output.nxz|output.nxs] [args]
+    
+      -i, --input arg   File to process
+      -o, --output arg  Nexus output file
+          --overwrite   Overwrite output file if it exists
+      -h, --help        Print help
+          --debug       Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
