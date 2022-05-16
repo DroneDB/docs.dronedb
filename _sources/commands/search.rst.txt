@@ -1,0 +1,22 @@
+.. _search_command:
+
+********************************************************************************
+search
+********************************************************************************
+
+::
+
+    Search indexed files and directories
+    
+    Usage:
+      ddb search '*file*' [args]
+    
+      -q, --query arg        Search query
+      -w, --working-dir arg  Working directory (default: .)
+      -f, --format arg       Output format (text|json) (default: text)
+      -h, --help             Print help
+          --debug            Show debug output
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
